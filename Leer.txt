@@ -1,0 +1,62 @@
+La libreria de opencv entrega una serie de modelos de reconocimiento de rostros, objetos, animales, etc. ya entrenados
+y listos para usar, en este caso se usa haarcascade_frontalface_default para el reconocimiento de rosotros 
+y con este crear un login simple a traves de consola, se usa como base el modelo de opencv para asi crear un nuevo modelo,
+un modelo personalizado para x cantidad de usuarios, se hace la captura de imagenes a traves de la webcam con la que se pasa a 
+escala de grises para la lectura de datos capturados, se genera una data con carpetas que contendran las imagenes capturadas
+del usuario, con estas imagenes comienza el entrenamiento del modelo personal. Para el entrenamiento se usa el metodo
+de la libreria de opencv EigenFaceRecognizer_create junto con el metodo train tambien propio de la libreria. 
+Una ves entrenado el modelo se genera un archivo xml con el nombre del usuario, ete xml se cargara al login para el inisio de sesion.
+
+La carpeta data actualmente no se encuentra con data, pero al momento en que te registres se generara data con informacion tuya y tu nombre de usuario,
+tambien en la carpeta principal se generara un archivo xml el cual servira de lectura para la aplicacion y reconocimiento de informacion.
+
+Espero te sirva. 
+Mis contactos son:
+
+Correo: abarcanicolas6@gmail.com
+Linkedin: www.linkedin.com/in/nicolas-abarca-galvez-39b49319a
+Github: https://github.com/Nicolasabar
+
+para instalar en mac y linux o basados en linux instalar libreria opencv 
+de reconocimiento IA. 
+Ejecutar comando en terminal
+
+pip3 install opencv-python
+
+
+Para windows
+
+pip install opencv-python
+
+libreria imutils mac linux
+
+pip3 install imutils
+
+windows
+
+pip install imutils
+
+
+En el archivo reconocimiento se debe cambiar la direccion de la carpeta 
+por defecto esta:
+dataPath = '/home/nicolas/Desktop/python whit open cv/data'
+se debe cambiar a la propia de su maquina 
+
+en el archivo reconocimientoLogin cambiar ubicacion de dataPath:
+'/home/nicolas/Desktop/python whit open cv/data'
+a la de su maquina donde valla a leer la data 
+
+dentro del mismo archivo cambiar la ubicacion a la de su maquina
+data_xml = '/home/nicolas/Desktop/python whit open cv/' + nombremodelo + '.xml'
+
+dentro del archivo registroIA cambiar ubicacion de os.mkdir('/home/nicolas/Desktop/python whit open cv/data/' + nameFolder)
+en esta carpeta se creera la data del usuario 
+
+cambiar datapath:
+'/home/nicolas/Desktop/python whit open cv/data' por ubicacion de propia maquina 
+
+cuando se registra o se logea y da resultado desconocido esperar, validara por segunda ves si existe el usuario a traves
+del reconocimiento, si no lo puedo reconocer en la segunda oportunidad se cerrara automaticamente
+
+
+
